@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #0a0a0a;
+    width: 100%;
+  }
+
+  /* Left logo */
+  .logo-left img {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+
+  /* Right side wrapper: nav links + second logo */
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .nav-links li a,
+  .nav-links li span {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links li span:hover {
+    color: #4dd0e1;
+  }
+
+  .logo-right img {
+    height: 35px;
+    width: auto;
+    display: block;
+  }
+
+  /* Mobile responsiveness for header */
+  @media (max-width: 768px) {
+    header {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .right-section {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+
+  /* ---------- Upload sections ---------- */
+  .upload-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 25px 30px;
+    background-color: #f4f4f4;
+  }
+
+  .upload-card {
+    flex: 1;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .upload-card h3 {
+    font-size: 16px;
+    color: #222;
+  }
+
+  .upload-preview {
+    width: 100%;
+    max-width: 220px;
+    height: 100px;
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa;
+  }
+
+  .upload-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .upload-preview span {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .upload-card input[type="file"] {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .upload-actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .upload-actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .btn-upload {
+    background-color: #0a0a0a;
+    color: #fff;
+  }
+
+  .btn-delete {
+    background-color: #e63946;
+    color: #fff;
+  }
+
+  .upload-actions button:hover {
+    opacity: 0.85;
+  }
+
+  .upload-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .upload-status {
+    font-size: 12px;
+    min-height: 16px;
+    text-align: center;
+  }
+
+  /* Mobile responsiveness for upload section */
+  @media (max-width: 768px) {
+    .upload-wrapper {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .upload-card {
+      width: 100%;
+    }
+  }
+</style>
+  <!--SVG favicon-->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2328282A'/%3E%3Cg stroke='%2350FA7B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M4 24h24'/%3E%3Cpath d='M8 24v4'/%3E%3Cpath d='M24 24v4'/%3E%3Crect x='8' y='8' width='16' height='12' rx='2'/%3E%3Cpath d='M16 20v4'/%3E%3C/g%3E%3C/svg%3E">
+<!--closing my SVG favicon-->
+</head>
+<body>
+
+<header>
+  <!-- Left logo (Supabase image 1) -->
+  <div class="logo-left">
+    <img id="logoLeft" src="" alt="Logo">
+  </div>
+
+  <!-- Right section: nav links + second logo -->
+  <div class="right-section">
+    <ul class="nav-links">
+      <li><span onclick="navHome()">Home</span></li>
+      <li><span onclick="navAbout()">About</span></li>
+      <li><span onclick="navServices()">Services</span></li>
+      <li><span onclick="navPricing()">Pricing</span></li>
+      <li><span onclick="navContact()">Contact</span></li>
+    </ul>
+
+    <div class="logo-right">
+      <img id="logoRight" src="" alt="Logo">
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<div class="adminportal">
+<!-- Upload sections -->
+<div class="upload-wrapper">
+
+  <!-- Upload card 1: Left logo -->
+  <div class="upload-card">
+    <h3>Left Logo</h3>
+    <div class="upload-preview" id="previewLeftWrap">
+      <span id="previewLeftPlaceholder">No image</span>
+      <img id="previewLeft" src="" alt="" style="display:none;">
+    </div>
+    <input type="file" id="fileLeft" accept="image/*">
+    <div class="upload-actions">
+      <button class="btn-upload" onclick="uploadImage('left')">Upload</button>
+      <button class="btn-delete" onclick="deleteImage('left')">Delete</button>
+    </div>
+    <div class="upload-status" id="statusLeft"></div>
+  </div>
+
+  <!-- Upload card 2: Right logo -->
+  <div class="upload-card">
+    <h3>Right Logo</h3>
+    <div class="upload-preview" id="previewRightWrap">
+      <span id="previewRightPlaceholder">No image</span>
+      <img id="previewRight" src="" alt="" style="display:none;">
+    </div>
+    <input type="file" id="fileRight" accept="image/*">
+    <div class="upload-actions">
+      <button class="btn-upload" onclick="uploadImage('right')">Upload</button>
+      <button class="btn-delete" onclick="deleteImage('right')">Delete</button>
+    </div>
+    <div class="upload-status" id="statusRight"></div>
+  </div>
+
+</div>
+<!--we must close the adminportal after opening-->
+</div>
+<!--I marked the ending of my Admin portal-->
+
+
+
+
+
+<script>
+  // ---------- Supabase setup ----------
+  const SUPABASE_URL = "https://kvozhxngadxebclfpcpx.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2b3poeG5nYWR4ZWJjbGZwY3B4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwODIwNDQsImV4cCI6MjA5NjY1ODA0NH0.861nCCV3sCj3uu6UIN0lCXQYE5-cWn5agSjfxU7OJNc";
+  const BUCKET_NAME = "logos";
+
+  const LOGO_LEFT_PATH = "logo-left.png";
+  const LOGO_RIGHT_PATH = "logo-right.png";
+
+  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  function getSupabasePublicUrl(bucket, filePath) {
+    const { data } = supabaseClient.storage.from(bucket).getPublicUrl(filePath);
+    return data.publicUrl;
+  }
+
+  // Cache-bust so updated images show immediately after upload
+  function withCacheBust(url) {
+    return `${url}?t=${Date.now()}`;
+  }
+
+  function loadLogos() {
+    document.getElementById("logoLeft").src = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, LOGO_LEFT_PATH));
+    document.getElementById("logoRight").src = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, LOGO_RIGHT_PATH));
+
+    document.getElementById("previewLeft").src = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, LOGO_LEFT_PATH));
+    document.getElementById("previewRight").src = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, LOGO_RIGHT_PATH));
+  }
+
+  loadLogos();
+
+  // ---------- Upload ----------
+  async function uploadImage(side) {
+    const fileInput = document.getElementById(side === "left" ? "fileLeft" : "fileRight");
+    const statusEl = document.getElementById(side === "left" ? "statusLeft" : "statusRight");
+    const filePath = side === "left" ? LOGO_LEFT_PATH : LOGO_RIGHT_PATH;
+
+    const file = fileInput.files[0];
+    if (!file) {
+      statusEl.textContent = "Please choose a file first.";
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Uploading...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .upload(filePath, file, {
+        upsert: true,
+        cacheControl: "3600"
+      });
+
+    if (error) {
+      console.error(error);
+      statusEl.textContent = "Upload failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Uploaded successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    fileInput.value = "";
+    updatePreview(side);
+    loadLogos();
+  }
+
+  // ---------- Delete ----------
+  async function deleteImage(side) {
+    const statusEl = document.getElementById(side === "left" ? "statusLeft" : "statusRight");
+    const filePath = side === "left" ? LOGO_LEFT_PATH : LOGO_RIGHT_PATH;
+
+    statusEl.textContent = "Deleting...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .remove([filePath]);
+
+    if (error) {
+      console.error(error);
+      statusEl.textContent = "Delete failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Deleted successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    resetPreview(side);
+    resetHeaderLogo(side);
+  }
+
+  // ---------- Preview helpers ----------
+  function updatePreview(side) {
+    const previewImg = document.getElementById(side === "left" ? "previewLeft" : "previewRight");
+    const placeholder = document.getElementById(side === "left" ? "previewLeftPlaceholder" : "previewRightPlaceholder");
+    const filePath = side === "left" ? LOGO_LEFT_PATH : LOGO_RIGHT_PATH;
+
+    previewImg.src = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, filePath));
+    previewImg.style.display = "block";
+    placeholder.style.display = "none";
+  }
+
+  function resetPreview(side) {
+    const previewImg = document.getElementById(side === "left" ? "previewLeft" : "previewRight");
+    const placeholder = document.getElementById(side === "left" ? "previewLeftPlaceholder" : "previewRightPlaceholder");
+
+    previewImg.src = "";
+    previewImg.style.display = "none";
+    placeholder.style.display = "block";
+  }
+
+  function resetHeaderLogo(side) {
+    const logoImg = document.getElementById(side === "left" ? "logoLeft" : "logoRight");
+    logoImg.src = "";
+  }
+
+  // ---------- Navigation link handlers (onclick, not href) ----------
+  function navHome() {
+    console.log("Home clicked");
+  }
+
+  function navAbout() {
+    console.log("About clicked");
+  }
+
+  function navServices() {
+    console.log("Services clicked");
+  }
+
+  function navPricing() {
+    console.log("Pricing clicked");
+  }
+
+  function navContact() {
+    console.log("Contact clicked");
+  }
+</script>
+
+</body>
+  </html>
