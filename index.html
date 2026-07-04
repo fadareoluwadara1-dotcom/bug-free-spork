@@ -388,6 +388,175 @@
       max-width: 100%;
     }
   }
+  
+  
+  
+  
+  
+  
+  /* ================= SECTION 1 DISPLAY (numbered from 4) ================= */
+  .section-4 {
+    position: relative;
+    width: 100%;
+    padding: 80px 30px;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .overlay-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .content-4 {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #heading-4 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  #paragraph-4 {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .section-4 {
+      padding: 50px 20px;
+    }
+
+    #heading-4 {
+      font-size: 22px;
+    }
+
+    #paragraph-4 {
+      font-size: 14px;
+    }
+  }
+
+  /* ================= SECTION 1 BACKGROUND UPLOAD (numbered) ================= */
+  .section-5 {
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #f4f4f4;
+  }
+
+  .card-5 {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #heading-5 {
+    font-size: 16px;
+    color: #222;
+  }
+
+  .preview-5 {
+    width: 100%;
+    max-width: 300px;
+    height: 120px;
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa;
+  }
+
+  #preview-img-5 {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  #preview-placeholder-5 {
+    font-size: 12px;
+    color: #999;
+  }
+
+  #file-5 {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .actions-5 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .actions-5 button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  #btn-upload-5 {
+    background-color: #0a0a0a;
+    color: #fff;
+  }
+
+  #btn-delete-5 {
+    background-color: #e63946;
+    color: #fff;
+  }
+
+  .actions-5 button:hover {
+    opacity: 0.85;
+  }
+
+  .actions-5 button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #status-5 {
+    font-size: 12px;
+    min-height: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .section-5 {
+      padding: 20px;
+    }
+
+    .card-5 {
+      max-width: 100%;
+    }
+  }
 </style>
   <!--SVG favicon-->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2328282A'/%3E%3Cg stroke='%2350FA7B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M4 24h24'/%3E%3Cpath d='M8 24v4'/%3E%3Cpath d='M24 24v4'/%3E%3Crect x='8' y='8' width='16' height='12' rx='2'/%3E%3Cpath d='M16 20v4'/%3E%3C/g%3E%3C/svg%3E">
@@ -429,6 +598,21 @@
   </div>
 </section>
 
+
+
+
+
+
+
+<!-- ================= SECTION 1 DISPLAY ================= -->
+<section class="section-4" id="section-4">
+  <div class="overlay-4"></div>
+
+  <div class="content-4">
+    <h2 id="heading-4">Your Section Heading</h2>
+    <p id="paragraph-4">Your centered paragraph text goes here. It stays contained within a max width so it doesn't stretch all the way to the left or right edges of the screen, keeping it easy to read.</p>
+  </div>
+</section>
 
 
 
@@ -490,6 +674,28 @@
     <div id="status-2"></div>
   </div>
 </section>
+
+
+<!-- ================= SECTION 1 BACKGROUND UPLOAD ================= -->
+<section class="section-5">
+  <div class="card-5">
+    <h3 id="heading-5">Section 1 Background Image</h3>
+
+    <div class="preview-5">
+      <span id="preview-placeholder-5">No image</span>
+      <img id="preview-img-5" src="" alt="">
+    </div>
+
+    <input type="file" id="file-5" accept="image/*">
+
+    <div class="actions-5">
+      <button id="btn-upload-5" onclick="uploadSection4Bg()">Upload</button>
+      <button id="btn-delete-5" onclick="deleteSection4Bg()">Delete</button>
+    </div>
+    <div id="status-5"></div>
+  </div>
+</section>
+
 <!--we must close the adminportal after opening-->
 </div>
 <!--I marked the ending of my Admin portal-->
@@ -765,6 +971,109 @@
     statusEl.style.color = "#2a9d3f";
 
     document.getElementById("video-1").src = "";
+  }
+  
+  
+  
+  
+  
+  // ---------- Config ----------
+  const SECTION_4_BG_PATH = "section-4-bg.jpg";
+  // Assumes SUPABASE_URL, SUPABASE_ANON_KEY, BUCKET_NAME, supabaseClient,
+  // getSupabasePublicUrl(), and withCacheBust() already exist in your page.
+
+  function loadSection4Background() {
+    const sectionEl = document.getElementById("section-4");
+    const url = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, SECTION_4_BG_PATH));
+    sectionEl.style.backgroundImage = `url("${url}")`;
+  }
+
+  function loadPreview5() {
+    const previewImg = document.getElementById("preview-img-5");
+    const placeholder = document.getElementById("preview-placeholder-5");
+    const url = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, SECTION_4_BG_PATH));
+
+    previewImg.src = url;
+    previewImg.style.display = "block";
+    placeholder.style.display = "none";
+  }
+
+  loadSection4Background();
+  loadPreview5();
+
+  // ---------- Upload ----------
+  async function uploadSection4Bg() {
+    const fileInput = document.getElementById("file-5");
+    const statusEl = document.getElementById("status-5");
+    const uploadBtn = document.getElementById("btn-upload-5");
+    const deleteBtn = document.getElementById("btn-delete-5");
+
+    const file = fileInput.files[0];
+    if (!file) {
+      statusEl.textContent = "Please choose an image file first.";
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "Uploading...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .upload(SECTION_4_BG_PATH, file, { upsert: true, cacheControl: "3600" });
+
+    uploadBtn.disabled = false;
+    deleteBtn.disabled = false;
+
+    if (error) {
+      statusEl.textContent = "Upload failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Uploaded successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    fileInput.value = "";
+    loadSection4Background();
+    loadPreview5();
+  }
+
+  // ---------- Delete ----------
+  async function deleteSection4Bg() {
+    const statusEl = document.getElementById("status-5");
+    const uploadBtn = document.getElementById("btn-upload-5");
+    const deleteBtn = document.getElementById("btn-delete-5");
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "Deleting...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .remove([SECTION_4_BG_PATH]);
+
+    uploadBtn.disabled = false;
+    deleteBtn.disabled = false;
+
+    if (error) {
+      statusEl.textContent = "Delete failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Deleted successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    document.getElementById("section-4").style.backgroundImage = "none";
+    document.getElementById("preview-img-5").style.display = "none";
+    document.getElementById("preview-img-5").src = "";
+    document.getElementById("preview-placeholder-5").style.display = "block";
   }
 </script>
 
