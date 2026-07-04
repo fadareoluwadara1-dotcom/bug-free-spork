@@ -192,6 +192,202 @@
       width: 100%;
     }
   }
+  
+  
+  
+   /* ================= MAIN VIDEO SECTION (numbered) ================= */
+  .section-1 {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    background-color: #000;
+  }
+
+  #video-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
+
+  .overlay-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  .content-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #heading-1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  #paragraph-1 {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #f1f1f1;
+  }
+
+  #btn-1 {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #4dd0e1;
+    color: #0a0a0a;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
+  }
+
+  #btn-1:hover {
+    opacity: 0.85;
+  }
+
+  @media (max-width: 768px) {
+    .section-1 {
+      height: 50vh;
+    }
+
+    #heading-1 {
+      font-size: 22px;
+    }
+
+    #paragraph-1 {
+      font-size: 14px;
+    }
+
+    #btn-1 {
+      padding: 10px 22px;
+      font-size: 14px;
+    }
+  }
+
+  /* ================= VIDEO UPLOAD SECTION (numbered) ================= */
+  .section-2 {
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #f4f4f4;
+  }
+
+  .card-2 {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #heading-2 {
+    font-size: 16px;
+    color: #222;
+  }
+
+  #file-2 {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .actions-2 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .actions-2 button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  #btn-upload-2 {
+    background-color: #0a0a0a;
+    color: #fff;
+  }
+
+  #btn-delete-2 {
+    background-color: #e63946;
+    color: #fff;
+  }
+
+  .actions-2 button:hover {
+    opacity: 0.85;
+  }
+
+  .actions-2 button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #status-2 {
+    font-size: 12px;
+    min-height: 16px;
+    text-align: center;
+  }
+
+  /* ---- Progress bar (numbered) ---- */
+  #progress-wrap-2 {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+  }
+
+  #progress-bar-2 {
+    height: 100%;
+    width: 0%;
+    background-color: #4dd0e1;
+    transition: width 0.15s ease;
+  }
+
+  #progress-text-2 {
+    font-size: 12px;
+    color: #333;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .section-2 {
+      padding: 20px;
+    }
+
+    .card-2 {
+      max-width: 100%;
+    }
+  }
 </style>
   <!--SVG favicon-->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2328282A'/%3E%3Cg stroke='%2350FA7B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M4 24h24'/%3E%3Cpath d='M8 24v4'/%3E%3Cpath d='M24 24v4'/%3E%3Crect x='8' y='8' width='16' height='12' rx='2'/%3E%3Cpath d='M16 20v4'/%3E%3C/g%3E%3C/svg%3E">
@@ -220,6 +416,19 @@
     </div>
   </div>
 </header>
+<!-- ================= MAIN VIDEO SECTION ================= -->
+<section class="section-1">
+  <video id="video-1" autoplay muted loop playsinline></video>
+
+  <div class="overlay-1"></div>
+
+  <div class="content-1">
+    <h3 id="heading-1">Your Heading Goes Here</h3>
+    <p id="paragraph-1">Your supporting paragraph text goes here, describing the value or message you want visitors to see first.</p>
+    <a id="btn-1" href="#">Get Started</a>
+  </div>
+</section>
+
 
 
 
@@ -260,6 +469,27 @@
   </div>
 
 </div>
+
+
+
+<!-- ================= VIDEO UPLOAD SECTION ================= -->
+<section class="section-2">
+  <div class="card-2">
+    <h3 id="heading-2">Hero Video</h3>
+    <input type="file" id="file-2" accept="video/*">
+
+    <div id="progress-wrap-2">
+      <div id="progress-bar-2"></div>
+    </div>
+    <div id="progress-text-2">0%</div>
+
+    <div class="actions-2">
+      <button id="btn-upload-2" onclick="uploadVideo()">Upload Video</button>
+      <button id="btn-delete-2" onclick="deleteVideo()">Delete Video</button>
+    </div>
+    <div id="status-2"></div>
+  </div>
+</section>
 <!--we must close the adminportal after opening-->
 </div>
 <!--I marked the ending of my Admin portal-->
@@ -410,7 +640,133 @@
   function navContact() {
     console.log("Contact clicked");
   }
+  
+  
+  
+  
+  
+  
+  
+    // ---------- Config (reuse existing Supabase client if you already have one) ----------
+  const HERO_VIDEO_PATH = "hero-video.mp4";
+  // Assumes SUPABASE_URL, SUPABASE_ANON_KEY, BUCKET_NAME, supabaseClient,
+  // getSupabasePublicUrl(), and withCacheBust() already exist in your page.
+
+  function loadHeroVideo() {
+    const videoEl = document.getElementById("video-1");
+    videoEl.src = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, HERO_VIDEO_PATH));
+    videoEl.load();
+  }
+
+  loadHeroVideo();
+
+  // ---------- Upload with progress (XHR) ----------
+  async function uploadVideo() {
+    const fileInput = document.getElementById("file-2");
+    const statusEl = document.getElementById("status-2");
+    const progressWrap = document.getElementById("progress-wrap-2");
+    const progressBar = document.getElementById("progress-bar-2");
+    const progressText = document.getElementById("progress-text-2");
+    const uploadBtn = document.getElementById("btn-upload-2");
+    const deleteBtn = document.getElementById("btn-delete-2");
+
+    const file = fileInput.files[0];
+    if (!file) {
+      statusEl.textContent = "Please choose a video file first.";
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    const { data: sessionData } = await supabaseClient.auth.getSession();
+    const token = sessionData?.session?.access_token || SUPABASE_ANON_KEY;
+
+    const uploadUrl = `${SUPABASE_URL}/storage/v1/object/${BUCKET_NAME}/${HERO_VIDEO_PATH}`;
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "";
+    progressWrap.style.display = "block";
+    progressText.style.display = "block";
+    progressBar.style.width = "0%";
+    progressText.textContent = "0%";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("PUT", uploadUrl, true);
+    xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    xhr.setRequestHeader("apikey", SUPABASE_ANON_KEY);
+    xhr.setRequestHeader("x-upsert", "true");
+    xhr.setRequestHeader("Content-Type", file.type || "video/mp4");
+
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        const percent = Math.round((event.loaded / event.total) * 100);
+        progressBar.style.width = percent + "%";
+        progressText.textContent = percent + "%";
+      }
+    };
+
+    xhr.onload = () => {
+      uploadBtn.disabled = false;
+      deleteBtn.disabled = false;
+
+      if (xhr.status >= 200 && xhr.status < 300) {
+        statusEl.textContent = "Video uploaded successfully.";
+        statusEl.style.color = "#2a9d3f";
+        progressBar.style.width = "100%";
+        progressText.textContent = "100%";
+
+        fileInput.value = "";
+        loadHeroVideo();
+
+        setTimeout(() => {
+          progressWrap.style.display = "none";
+          progressText.style.display = "none";
+          progressBar.style.width = "0%";
+        }, 1200);
+      } else {
+        statusEl.textContent = "Upload failed: " + xhr.responseText;
+        statusEl.style.color = "#e63946";
+        progressWrap.style.display = "none";
+        progressText.style.display = "none";
+      }
+    };
+
+    xhr.onerror = () => {
+      uploadBtn.disabled = false;
+      deleteBtn.disabled = false;
+      statusEl.textContent = "Upload failed due to a network error.";
+      statusEl.style.color = "#e63946";
+      progressWrap.style.display = "none";
+      progressText.style.display = "none";
+    };
+
+    xhr.send(file);
+  }
+
+  // ---------- Delete ----------
+  async function deleteVideo() {
+    const statusEl = document.getElementById("status-2");
+
+    statusEl.textContent = "Deleting video...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .remove([HERO_VIDEO_PATH]);
+
+    if (error) {
+      statusEl.textContent = "Delete failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Video deleted successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    document.getElementById("video-1").src = "";
+  }
 </script>
 
 </body>
-  </html>
+</html>
