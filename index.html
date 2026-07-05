@@ -557,6 +557,345 @@
       max-width: 100%;
     }
   }
+  
+  
+  
+  
+    /* ================= SECTION 2 DISPLAY (numbered from 5) ================= */
+  .section-5 {
+    position: relative;
+    width: 100%;
+    padding: 60px 30px;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .overlay-5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  /* Left box shape (bio image) - pinned strongly left */
+  .box-5 {
+    position: relative;
+    z-index: 1;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    margin-right: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #bio-img-5 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  #bio-placeholder-5 {
+    color: #999;
+    font-size: 13px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Right side text content - pinned strongly right */
+.content-5 {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  max-width: 480px;
+  margin-left: auto;
+  text-align: left;
+}
+
+  #heading-5 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  #paragraph-5 {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  #link-5 {
+    color: #2ecc71;
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  #link-5:active {
+    color: #f1c40f;
+  }
+
+  @media (max-width: 768px) {
+    .section-5 {
+      padding: 40px 20px;
+      gap: 20px;
+    }
+
+    .content-5 {
+      max-width: 60%;
+    }
+
+    #heading-5 {
+      font-size: 20px;
+    }
+
+    #paragraph-5 {
+      font-size: 13px;
+    }
+
+    .box-5 {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .box-5 {
+      width: 90px;
+      height: 90px;
+    }
+
+    #heading-5 {
+      font-size: 17px;
+    }
+
+    #paragraph-5 {
+      font-size: 12px;
+    }
+  }
+
+  /* ================= SECTION 2 BACKGROUND UPLOAD (numbered) ================= */
+  .section-6 {
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #f4f4f4;
+  }
+
+  .card-6 {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #heading-6 {
+    font-size: 16px;
+    color: #222;
+  }
+
+  .preview-6 {
+    width: 100%;
+    max-width: 300px;
+    height: 120px;
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa;
+  }
+
+  #preview-img-6 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  #preview-placeholder-6 {
+    font-size: 12px;
+    color: #999;
+  }
+
+  #file-6 {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .actions-6 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .actions-6 button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  #btn-upload-6 {
+    background-color: #0a0a0a;
+    color: #fff;
+  }
+
+  #btn-delete-6 {
+    background-color: #e63946;
+    color: #fff;
+  }
+
+  .actions-6 button:hover {
+    opacity: 0.85;
+  }
+
+  .actions-6 button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #status-6 {
+    font-size: 12px;
+    min-height: 16px;
+    text-align: center;
+  }
+
+  /* ================= SECTION 2 BIO IMAGE UPLOAD (numbered) ================= */
+  .section-7 {
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #f4f4f4;
+  }
+
+  .card-7 {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #heading-7 {
+    font-size: 16px;
+    color: #222;
+  }
+
+  .preview-7 {
+    width: 140px;
+    height: 140px;
+    border: 1px dashed #bbb;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa;
+  }
+
+  #preview-img-7 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  #preview-placeholder-7 {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    padding: 8px;
+  }
+
+  #file-7 {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .actions-7 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .actions-7 button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  #btn-upload-7 {
+    background-color: #0a0a0a;
+    color: #fff;
+  }
+
+  #btn-delete-7 {
+    background-color: #e63946;
+    color: #fff;
+  }
+
+  .actions-7 button:hover {
+    opacity: 0.85;
+  }
+
+  .actions-7 button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #status-7 {
+    font-size: 12px;
+    min-height: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .section-6,
+    .section-7 {
+      padding: 20px;
+    }
+
+    .card-6,
+    .card-7 {
+      max-width: 100%;
+    }
+  }
 </style>
   <!--SVG favicon-->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2328282A'/%3E%3Cg stroke='%2350FA7B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M4 24h24'/%3E%3Cpath d='M8 24v4'/%3E%3Cpath d='M24 24v4'/%3E%3Crect x='8' y='8' width='16' height='12' rx='2'/%3E%3Cpath d='M16 20v4'/%3E%3C/g%3E%3C/svg%3E">
@@ -614,6 +953,21 @@
   </div>
 </section>
 
+<!-- ================= SECTION 2 DISPLAY ================= -->
+<section class="section-5" id="section-5">
+  <div class="overlay-5"></div>
+
+  <div class="box-5">
+    <span id="bio-placeholder-5">No image</span>
+    <img id="bio-img-5" src="" alt="Bio image">
+  </div>
+
+  <div class="content-5">
+    <h2 id="heading-5">Your Section Heading</h2>
+    <p id="paragraph-5">Your paragraph text goes here, describing this section's content or message to your visitors.</p>
+    <a id="link-5" href="#">This is the podcast link</a>
+  </div>
+</section>
 
 
 
@@ -696,6 +1050,45 @@
   </div>
 </section>
 
+<!-- ================= SECTION 2 BACKGROUND UPLOAD ================= -->
+<section class="section-6">
+  <div class="card-6">
+    <h3 id="heading-6">Section 2 Background Image</h3>
+
+    <div class="preview-6">
+      <span id="preview-placeholder-6">No image</span>
+      <img id="preview-img-6" src="" alt="">
+    </div>
+
+    <input type="file" id="file-6" accept="image/*">
+
+    <div class="actions-6">
+      <button id="btn-upload-6" onclick="uploadSection5Bg()">Upload</button>
+      <button id="btn-delete-6" onclick="deleteSection5Bg()">Delete</button>
+    </div>
+    <div id="status-6"></div>
+  </div>
+</section>
+
+<!-- ================= SECTION 2 BIO IMAGE UPLOAD ================= -->
+<section class="section-7">
+  <div class="card-7">
+    <h3 id="heading-7">Bio Image (Box)</h3>
+
+    <div class="preview-7">
+      <span id="preview-placeholder-7">No image</span>
+      <img id="preview-img-7" src="" alt="">
+    </div>
+
+    <input type="file" id="file-7" accept="image/*">
+
+    <div class="actions-7">
+      <button id="btn-upload-7" onclick="uploadBioImage()">Upload</button>
+      <button id="btn-delete-7" onclick="deleteBioImage()">Delete</button>
+    </div>
+    <div id="status-7"></div>
+  </div>
+</section>
 <!--we must close the adminportal after opening-->
 </div>
 <!--I marked the ending of my Admin portal-->
@@ -1074,6 +1467,214 @@
     document.getElementById("preview-img-5").style.display = "none";
     document.getElementById("preview-img-5").src = "";
     document.getElementById("preview-placeholder-5").style.display = "block";
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   // ---------- Config ----------
+  const SECTION_5_BG_PATH = "section-5-bg.jpg";
+  const BIO_IMAGE_PATH = "bio-image.jpg";
+  // Assumes SUPABASE_URL, SUPABASE_ANON_KEY, BUCKET_NAME, supabaseClient,
+  // getSupabasePublicUrl(), and withCacheBust() already exist in your page.
+
+  function loadSection5Background() {
+    const sectionEl = document.getElementById("section-5");
+    const url = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, SECTION_5_BG_PATH));
+    sectionEl.style.backgroundImage = `url("${url}")`;
+  }
+
+  function loadPreview6() {
+    const previewImg = document.getElementById("preview-img-6");
+    const placeholder = document.getElementById("preview-placeholder-6");
+    const url = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, SECTION_5_BG_PATH));
+
+    previewImg.src = url;
+    previewImg.style.display = "block";
+    placeholder.style.display = "none";
+  }
+
+  function loadBioImage() {
+    const bioImg = document.getElementById("bio-img-5");
+    const bioPlaceholder = document.getElementById("bio-placeholder-5");
+    const url = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, BIO_IMAGE_PATH));
+
+    bioImg.src = url;
+    bioImg.style.display = "block";
+    bioPlaceholder.style.display = "none";
+  }
+
+  function loadPreview7() {
+    const previewImg = document.getElementById("preview-img-7");
+    const placeholder = document.getElementById("preview-placeholder-7");
+    const url = withCacheBust(getSupabasePublicUrl(BUCKET_NAME, BIO_IMAGE_PATH));
+
+    previewImg.src = url;
+    previewImg.style.display = "block";
+    placeholder.style.display = "none";
+  }
+
+  loadSection5Background();
+  loadPreview6();
+  loadBioImage();
+  loadPreview7();
+
+  // ---------- Upload / Delete: Section 2 background ----------
+  async function uploadSection5Bg() {
+    const fileInput = document.getElementById("file-6");
+    const statusEl = document.getElementById("status-6");
+    const uploadBtn = document.getElementById("btn-upload-6");
+    const deleteBtn = document.getElementById("btn-delete-6");
+
+    const file = fileInput.files[0];
+    if (!file) {
+      statusEl.textContent = "Please choose an image file first.";
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "Uploading...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .upload(SECTION_5_BG_PATH, file, { upsert: true, cacheControl: "3600" });
+
+    uploadBtn.disabled = false;
+    deleteBtn.disabled = false;
+
+    if (error) {
+      statusEl.textContent = "Upload failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Uploaded successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    fileInput.value = "";
+    loadSection5Background();
+    loadPreview6();
+  }
+
+  async function deleteSection5Bg() {
+    const statusEl = document.getElementById("status-6");
+    const uploadBtn = document.getElementById("btn-upload-6");
+    const deleteBtn = document.getElementById("btn-delete-6");
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "Deleting...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .remove([SECTION_5_BG_PATH]);
+
+    uploadBtn.disabled = false;
+    deleteBtn.disabled = false;
+
+    if (error) {
+      statusEl.textContent = "Delete failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Deleted successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    document.getElementById("section-5").style.backgroundImage = "none";
+    document.getElementById("preview-img-6").style.display = "none";
+    document.getElementById("preview-img-6").src = "";
+    document.getElementById("preview-placeholder-6").style.display = "block";
+  }
+
+  // ---------- Upload / Delete: Bio image ----------
+  async function uploadBioImage() {
+    const fileInput = document.getElementById("file-7");
+    const statusEl = document.getElementById("status-7");
+    const uploadBtn = document.getElementById("btn-upload-7");
+    const deleteBtn = document.getElementById("btn-delete-7");
+
+    const file = fileInput.files[0];
+    if (!file) {
+      statusEl.textContent = "Please choose an image file first.";
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "Uploading...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .upload(BIO_IMAGE_PATH, file, { upsert: true, cacheControl: "3600" });
+
+    uploadBtn.disabled = false;
+    deleteBtn.disabled = false;
+
+    if (error) {
+      statusEl.textContent = "Upload failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Uploaded successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    fileInput.value = "";
+    loadBioImage();
+    loadPreview7();
+  }
+
+  async function deleteBioImage() {
+    const statusEl = document.getElementById("status-7");
+    const uploadBtn = document.getElementById("btn-upload-7");
+    const deleteBtn = document.getElementById("btn-delete-7");
+
+    uploadBtn.disabled = true;
+    deleteBtn.disabled = true;
+    statusEl.textContent = "Deleting...";
+    statusEl.style.color = "#555";
+
+    const { error } = await supabaseClient
+      .storage
+      .from(BUCKET_NAME)
+      .remove([BIO_IMAGE_PATH]);
+
+    uploadBtn.disabled = false;
+    deleteBtn.disabled = false;
+
+    if (error) {
+      statusEl.textContent = "Delete failed: " + error.message;
+      statusEl.style.color = "#e63946";
+      return;
+    }
+
+    statusEl.textContent = "Deleted successfully.";
+    statusEl.style.color = "#2a9d3f";
+
+    document.getElementById("bio-img-5").style.display = "none";
+    document.getElementById("bio-img-5").src = "";
+    document.getElementById("bio-placeholder-5").style.display = "block";
+
+    document.getElementById("preview-img-7").style.display = "none";
+    document.getElementById("preview-img-7").src = "";
+    document.getElementById("preview-placeholder-7").style.display = "block";
   }
 </script>
 
